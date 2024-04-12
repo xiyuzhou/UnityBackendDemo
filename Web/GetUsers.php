@@ -1,10 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "unitybackend";
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname );
+require 'ConnectionSettings.php';
 
 // Check connection
 if ($conn->connect_error) {

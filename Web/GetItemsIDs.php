@@ -1,20 +1,16 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "unitybackend";
+require 'ConnectionSettings.php';
 
 $userID = $_POST["userID"];
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname );
 
-// Check connection
+
+// Check connection`
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-echo "Connected successfully";
 
-$sql = "SELECT itemID FROM usersitems WHERE userID = '". $userID . "'";
+$sql = "SELECT ID, itemID FROM usersitems WHERE userID = '". $userID . "'";
 
 $result = $conn->query($sql);
 
@@ -29,7 +25,7 @@ if ($result->num_rows > 0) {
 } 
 else 
 {
-  echo "o result";
+  echo "0";
 }
 $conn->close();
 

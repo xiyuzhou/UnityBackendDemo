@@ -1,16 +1,6 @@
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "unitybackend";
-
-//variables by users
-//$loginUser = $_POST["loginUser"];
-//$loginPass = $_POST["loginPass"];
-$itemID = $_POST["itemID"];
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname );
+require 'ConnectionSettings.php';
 
 // Check connection
 if ($conn->connect_error) {
@@ -18,6 +8,11 @@ if ($conn->connect_error) {
 }
 //echo "Connected successfully";
 //echo "<br>";
+//variables by users
+//$loginUser = $_POST["loginUser"];
+//$loginPass = $_POST["loginPass"];
+$itemID = $_POST["itemID"];
+// Create connection
 
 $response = array();
 
